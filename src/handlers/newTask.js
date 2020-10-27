@@ -19,7 +19,7 @@ exports.handler = (event, context, callback) => {
     const taskId = toUrlString(randomBytes(16));
     console.log('Received event ', taskId, );
 
-    const requestBody = event.body;
+    const requestBody = JSON.parse(event.body);
 
     const JWT = parseJwt(event.headers["Authorization"]);
     //console.log(JWT)
@@ -30,7 +30,6 @@ exports.handler = (event, context, callback) => {
     // included in the authentication token are provided in the request context.
     // This includes the username as well as other attributes.
     const email = JWT['email'];
-    console.log(email);
 
 
     // The body field of the event in a proxy integration is a raw string.
