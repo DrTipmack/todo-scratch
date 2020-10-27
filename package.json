@@ -4,6 +4,8 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "atob": "^2.1.2",
+        "aws-sdk": "^2.779.0"
     },
     "devDependencies": {
         "jest": "^24.7.1"
